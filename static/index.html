@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status</title>
+    <script>
+        function getStatus() {
+            fetch("/status.json")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('water').innerText = `Water: ${data.water}`;
+                    document.getElementById('wind').innerText = `Wind: ${data.wind}`;
+                    document.getElementById('status').innerText = determineStatus(data.water, data.wind);
+                })
+                .catch(error => console.error('Error fetching status:', error));
+        }
+
+        function determineStatus(water, wind) {
+            if (water < 5 && wind < 6) return 'Aman';
+            if ((water >= 6 && water <= 8) && (wind >= 6 && wind <= 15)) return 'Siaga';
+            return 'Bahaya';
+        }
+
+        setInterval(getStatus, 1000); // Refresh every second
+        getStatus(); // Initial call to get status
+    </script>
+</head>
+
+<body>
+    <h1>Status</h1>
+    <div id="water"></div>
+    <div id="wind"></div>
+    <div id="status"></div>
+</body>
+
+</html>
