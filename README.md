@@ -1,6 +1,6 @@
-# Proyek Pembaruan Data Otomatis Cuaca
+# Proyek Auto Reload Cuaca
 
-Proyek ini merupakan sebuah mikroservis sederhana menggunakan Go yang menghasilkan nilai acak untuk air dan angin setiap 15 detik, memperbarui sebuah file JSON (`status.json`), dan menyajikan halaman web yang menampilkan status berdasarkan kriteria yang telah ditentukan sebelumnya.
+Proyek ini merupakan sebuah microservice menggunakan Go yang menghasilkan nilai acak untuk air dan angin setiap 15 detik, memperbarui sebuah file JSON (`status.json`), dan menyajikan halaman web yang menampilkan status berdasarkan kriteria yang telah ditentukan sebelumnya.
 
 ## Fitur
 
